@@ -36,6 +36,8 @@ minchangeindex=changes.index(min(changes))
 minchangerow=rows[minchangeindex+1]
 print(f'Greatest Decrease in Profits:', minchangerow[0],"$",minchange)
 
+
+# creating and writing text file called results.txt
 with open("results.txt","w") as file:
     file.write
     file.write("FINANCIAL ANALSYSIS\n")
