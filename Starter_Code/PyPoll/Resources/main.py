@@ -44,3 +44,20 @@ with open(election) as csvfile:
     print('----------')       
     print(f"Winner: {winner}")
     print('----------') 
+
+# creating and writing text file called winners.txt
+# Xpert Learning Assistant had me surround the with open with defining the results to not repeat the entire block of code
+def writeresults(totalvotes, candidatevotes, winner):
+    with open('winners.txt','w') as file:
+        file.write("Election Results\n")
+        file.write('----------\n')
+        file.write(f'Total Votes: {totalvotes} \n')
+        file.write('----------\n')
+        for candidatename,votes in candidatevotes.items():
+            percentage=(votes/totalvotes)*100
+            file.write(f"{candidatename}: {percentage:.3f}% ({votes})\n")
+        file.write('----------\n')       
+        file.write(f"Winner: {winner}\n")
+        file.write('----------') 
+# call the functionto write the results to the file
+writeresults(totalvotes, candidatevotes, winner)
